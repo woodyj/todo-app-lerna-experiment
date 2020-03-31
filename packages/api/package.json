@@ -24,6 +24,8 @@
     "url": "https://github.com/woodyj/todo-app/issues"
   },
   "devDependencies": {
-    "typescript": "^3.8.3"
+    "jest": "^25.2.4",
+    "typescript": "^3.8.3",
+    "commonjs": "^0.0.1"
   }
 }
