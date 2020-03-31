@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "AWS SAM API for to managing the todo list.",
+  "author": "James Wood <woodyj888@googlemail.com>",
+  "homepage": "https://github.com/woodyj/todo-app#readme",
+  "license": "ISC",
+  "main": "lib/api.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodyj/todo-app.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/woodyj/todo-app/issues"
+  }
+}
