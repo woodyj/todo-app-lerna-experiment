@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Todo App API
+  description: Something, something, something, dark side.
+  version: 0.0.1
+servers:
+  - url: http://api.todo-app.woodyj888.com
+    description: Production server
+paths:
+  /items:
+    get:
+      summary: Return all Items.
+      responses:
+        '200':
+          description: A JSON array of all Item objects.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Items'
+                
+  /items/{itemId}:
+    get:
+      summary: Fetch a single Item.
+      parameters: 
+        - in: path
+          name: itemId
+          schema:
+            type: string
+            format: uuid
+          required: true
+      responses:
+        '200':
+          description: A JSON object representation of the requested Item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+                
+    put:
+      summary: Persist a single Item.
+      parameters: 
+        - in: path
+          name: itemId
+          schema:
+            type: string
+            format: uuid
+          required: true
+      responses:
+        '200':
+          description: A JSON object representation of the requested Item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+                
+    delete:
+      summary: Remove a single item.
+      parameters: 
+        - in: path
+          name: itemId
+          schema:
+            type: string
+            format: uuid
+          required: true
+      responses:
+        '200':
+          description: An empty 200 is returned if delete successful.
+
+components:
+  schemas:
+    
+    Items:
+      type: array
+      items:
+        $ref: '#/components/schemas/Item'
+    
+    Item:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+      required: 
+        - id
+        - name
